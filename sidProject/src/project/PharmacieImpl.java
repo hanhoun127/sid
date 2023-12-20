@@ -38,7 +38,7 @@ public class PharmacieImpl extends UnicastRemoteObject implements PharmacieInter
         
             List<Article> articles = new ArrayList<>();
             try (Connection connection = DbConnection.connect();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM pharmacie");
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM pharmacie ORDER BY articleName");
              ResultSet resultSet = statement.executeQuery()) {
     
                 while (resultSet.next()) {
