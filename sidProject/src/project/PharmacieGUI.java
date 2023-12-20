@@ -19,7 +19,8 @@ public class PharmacieGUI extends JFrame {
     public PharmacieGUI() throws RemoteException {
         pharmacieObject = new PharmacieImpl();
         setTitle("Pharmacy Management System");
-        setSize(600, 400);
+        setSize(800, 400);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         tableModel = new DefaultTableModel();
