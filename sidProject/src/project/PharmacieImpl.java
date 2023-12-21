@@ -119,7 +119,12 @@ public int decrementerStock(String input) throws RemoteException {
                             }
                         }
                     } else {
-                        return 0; // Insufficient stock
+                        String deleteQuery = "DELETE stock FROM pharmacie  WHERE stock= ?";
+                        try (PreparedStatement deleteStmt = con.prepareStatement(deleteQuery)) {
+                            deleteStmt.setInt(1, 0);
+                            deleteStmt.executeUpdate();
+                            return 0;
+                        }
                     }
                 } else {
                     return -1; // Article not found
