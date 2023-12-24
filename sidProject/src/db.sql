@@ -4,7 +4,7 @@ use pharmacie
 
 CREATE TABLE pharmacie (
     barcode VARCHAR(13) NOT NULL PRIMARY KEY,
-    articleName VARCHAR(255) NOT NULL ,
+    articleName VARCHAR(255) NOT NULL UNIQUE,
     articlePrice DOUBLE NOT NULL,
     stock INT NOT NULl
 );
